@@ -27,7 +27,7 @@ public class BluetoothMesh {
         
         myNetwork.addDevice(nokia,1,2,3);
         myNetwork.addDevice(lamp, 0,4);
-        myNetwork.addDevice(ac,0,4,5);
+        myNetwork.addDevice(ac,0,4,5,6);
         myNetwork.addDevice(samsung,0,5);
         myNetwork.addDevice(iphone, 1,2,6);
         myNetwork.addDevice(macBook, 2,3,6);

@@ -15,6 +15,7 @@ import java.util.Arrays;
 public class Network {
     //Device rootDevice = new Device("123456");
     ArrayList<Device> network = new ArrayList();
+    int counter =0;
     
     /**
      * Adds the new device to the network arraylist and adds its reference to 
@@ -37,7 +38,8 @@ public class Network {
     public void sendMessage(String message, int freq, Device sender, int receiverID){
         int neigh = sender.getNeighbors().size();
         
-        System.out.println("currently on node " + sender.getDeviceID());
+        System.out.println("currently on node " + sender.getDeviceID() + " postion of visiting is " + counter);
+        counter++;
         for (int i=0;i<neigh;i++){
             int curAdd = (sender.getNeighbors().get(i));
             if (curAdd== receiverID){
