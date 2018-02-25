@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package bluetoothmesh;
+import java.util.Stack;
 
 /**
  *
@@ -33,9 +34,10 @@ public class BluetoothMesh {
         myNetwork.addDevice(macBook, 2,3,6);
         myNetwork.addDevice(pc, 2,4,5);
         
-        myNetwork.sendMessage("Here we are", 2, nokia, 6);
+        myNetwork.sendMessage("Here we are", 2, iphone, 3);
         
-        System.out.println("The message at Nokia is " + nokia.txt);
+        System.out.println("The message at samsung is " + samsung.txt);
+        
     }
     
 }

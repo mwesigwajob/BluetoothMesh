@@ -12,12 +12,12 @@ import java.util.ArrayList;
  * @author jobmwesigwa
  */
 public class BTMessage {
-    private String receiver = "";
-    private String reciverID = "";
-    private int receiverAddress = 0, messageFrequency = 0;
-    private long opcode = 0;
-    private ArrayList parameters = new ArrayList();
-
+    private int senderAddress = 0;
+    private int receiverAddress = 0; 
+    private int messageFrequency = 0;
+    private int hopes =0;
+    private int TIME_TO_LIVE = 0;
+    private String message ="";
     /**
      *
      */
@@ -28,80 +28,41 @@ public class BTMessage {
      *
      * @return
      */
-    public String getReceiver() {
-        return receiver;
-    }
-
-    /**
-     *
-     * @param receiver
-     */
-    public void setReceiver(String receiver) {
-        this.receiver = receiver;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String getReciverID() {
-        return reciverID;
+    public int getSenderAddress() {
+        return senderAddress;
     }
 
     /**
      *
      * @param reciverID
      */
-    public void setReciverID(String reciverID) {
-        this.reciverID = reciverID;
+    public void setReciverID(int senderAddress) {
+        this.senderAddress = senderAddress;
     }
 
-    /**
-     *
-     * @return
-     */
-//    public String getNetworkID() {
-//        return networkID;
-//    }
-
-    /**
-     *
-     * @param networkID
-     */
-//    public void setNetworkID(String networkID) {
-//        this.networkID = networkID;
-//    }
-
-    /**
-     *
-     * @return
-     */
-    public long getOpcode() {
-        return opcode;
+    public int getReceiverAddress() {
+        return receiverAddress;
     }
 
-    /**
-     *
-     * @param opcode
-     */
-    public void setOpcode(long opcode) {
-        this.opcode = opcode;
+    public void setReceiverAddress(int receiverAddress) {
+        this.receiverAddress = receiverAddress;
     }
 
-    /**
-     *
-     * @return
-     */
-    public ArrayList getParameters() {
-        return parameters;
+    public int getMessageFrequency() {
+        return messageFrequency;
     }
 
-    /**
-     *
-     * @param parameters
-     */
-    public void setParameters(ArrayList parameters) {
-        this.parameters = parameters;
+    public void setMessageFrequency(int messageFrequency) {
+        this.messageFrequency = messageFrequency;
     }
+
+    public int getTIME_TO_LIVE() {
+        return TIME_TO_LIVE;
+    }
+
+    public void setTIME_TO_LIVE(int TIME_TO_LIVE) {
+        this.TIME_TO_LIVE = TIME_TO_LIVE;
+    }
+    
     
 }
