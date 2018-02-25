@@ -42,8 +42,12 @@ public class BluetoothMesh {
         myNetwork.addDevice(macBook);
         myNetwork.addDevice(pc);
         
-        Flooding flooding = new Flooding(myNetwork);
-        flooding.sendMessage("Here we are", 2, iphone, 3);
+//        Flooding flooding = new Flooding(myNetwork);
+//        flooding.sendMessage("Here we are", 2, iphone, 3);
+        
+        OSPF ospf = new OSPF();
+        
+        ospf.sendMessage(myNetwork, iphone, samsung);
         
         System.out.println("The message at samsung is " + samsung.txt);
         
