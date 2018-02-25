@@ -14,16 +14,13 @@ import java.util.Stack;
 public class Device {
     private boolean relay = false;
     private int deviceID = 0;
-    private String address ="";
     private ArrayList<Integer> neighbors, frequencies = new ArrayList<Integer>();
     public String txt = "";
     public Stack<Integer> path = new Stack<Integer>();
-    //Constructor for the prvisioner
-
     
-    
-    //constructor for other devices 
-
+    //instances required for OSPF
+    private int dist = Integer.MAX_VALUE;
+    public ArrayList<Device> shortestPath = new ArrayList<Device>();
     /**
      *
      * @param devKy
@@ -31,6 +28,16 @@ public class Device {
     public Device (int devKy)
     {
         deviceID = devKy;
+    }
+    
+    public void addNeighbours(int...preds){
+        ArrayList adds = new ArrayList();
+        if (preds.length>0){
+            for (int address : preds) {
+                adds.add(address);
+            }
+        }
+        setNeighbors(adds);
     }
     
     /**
@@ -68,8 +75,6 @@ public class Device {
     public void setRelay(boolean relay) {
         this.relay = relay;
     }
-
-
     /**
      *
      * @return
@@ -85,8 +90,6 @@ public class Device {
     public void setDeviceID(int deviceID) {
         this.deviceID = deviceID;
     }
-
-  
 
     /**
      *
@@ -125,6 +128,38 @@ public class Device {
      */
     public void setFrequencies(ArrayList<Integer> frequencies) {
         this.frequencies = frequencies;
+    }
+
+    public String getTxt() {
+        return txt;
+    }
+
+    public void setTxt(String txt) {
+        this.txt = txt;
+    }
+
+    public Stack<Integer> getPath() {
+        return path;
+    }
+
+    public void setPath(Stack<Integer> path) {
+        this.path = path;
+    }
+
+    public int getDist() {
+        return dist;
+    }
+
+    public void setDist(int dist) {
+        this.dist = dist;
+    }
+
+    public ArrayList<Device> getShortestPath() {
+        return shortestPath;
+    }
+
+    public void setShortestPath(ArrayList<Device> shortestPath) {
+        this.shortestPath = shortestPath;
     }
     
     

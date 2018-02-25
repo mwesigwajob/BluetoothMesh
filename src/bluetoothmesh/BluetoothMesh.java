@@ -26,15 +26,24 @@ public class BluetoothMesh {
         Device macBook = new Device(5);
         Device pc = new Device(6);
         
-        myNetwork.addDevice(nokia,1,2,3);
-        myNetwork.addDevice(lamp, 0,4);
-        myNetwork.addDevice(ac,0,4,5,6);
-        myNetwork.addDevice(samsung,0,5);
-        myNetwork.addDevice(iphone, 1,2,6);
-        myNetwork.addDevice(macBook, 2,3,6);
-        myNetwork.addDevice(pc, 2,4,5);
+        nokia.addNeighbours(1,2,3);
+        lamp.addNeighbours(0,4);
+        ac.addNeighbours(0,4,5,6);
+        samsung.addNeighbours(0,5);
+        iphone.addNeighbours(1,2,6);
+        macBook.addNeighbours(2,3,6);
+        pc.addNeighbours(2,4,5);
         
-        myNetwork.sendMessage("Here we are", 2, iphone, 3);
+        myNetwork.addDevice(nokia);
+        myNetwork.addDevice(lamp);
+        myNetwork.addDevice(ac);
+        myNetwork.addDevice(samsung);
+        myNetwork.addDevice(iphone);
+        myNetwork.addDevice(macBook);
+        myNetwork.addDevice(pc);
+        
+        Flooding flooding = new Flooding(myNetwork);
+        flooding.sendMessage("Here we are", 2, iphone, 3);
         
         System.out.println("The message at samsung is " + samsung.txt);
         
