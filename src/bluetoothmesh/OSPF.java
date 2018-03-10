@@ -18,9 +18,9 @@ public class OSPF {
     public void sendMessage(Network network, Device sender, Device destination){
         myNet = network;
         messagePath = findPath(myNet,sender,destination);
-        System.out.println(messagePath.size());
+        System.out.println("\t\t********OSPF********\n");
         for (int i = 0; i < messagePath.size(); i++) {
-            System.out.println("The message at samsung aka " + messagePath.get(i).getDeviceID()+ " is " +destination.getTxt());
+            System.out.println("The message is currently at " + messagePath.get(i).getDeviceID()+ " is " +destination.getTxt());
             if (messagePath.get(i).equals(destination)){
                 destination.setTxt("OSPF we have made it");
                 

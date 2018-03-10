@@ -33,12 +33,12 @@ public class Flooding {
             //neigbours of the current node and adding the frequency if the message to node
             int neigh = sender.getNeighbors().size();
             sender.getFrequencies().add(freq);
-            
+            System.out.println("Message is currently at "+ sender.getDeviceID());
             //going through neighbours 
             for (int i=0;i<neigh;i++){
                 int curAdd = (sender.getNeighbors().get(i));
                 int senderID = sender.getDeviceID();
-                
+                System.out.println("\nMessage sent to " + curAdd);
                 //deliver message if destination is reached 
                 if (curAdd== receiverID){
                     (myNet.network.get(curAdd)).setPath(senderID,(myNet.network.get(senderID).path));
@@ -63,12 +63,12 @@ public class Flooding {
             sender = myNet.network.get(queue.remove());
             System.out.println();
             System.out.println();
-            System.out.println(queue.size());
         } while (!queue.isEmpty()); 
     }
     
     public boolean unicast(String msg, Stack<Integer> backPath, Device sender, int receiverId){
-      while (!backPath.isEmpty()){
+        System.out.println("The message path is "+ backPath.toString());
+        while (!backPath.isEmpty()){
           if (receiverId == backPath.pop()){
               System.out.println("Message Successfully delivered to "+sender.getDeviceID());
               return true;

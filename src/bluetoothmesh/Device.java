@@ -48,7 +48,6 @@ public class Device {
     { 
         if (prevPath.isEmpty() || prevPath.peek()!=sender)
             prevPath.push(sender);
-        System.out.println("thi is the id "+ prevPath.peek());
         path = (Stack)prevPath.clone();
     }
 
