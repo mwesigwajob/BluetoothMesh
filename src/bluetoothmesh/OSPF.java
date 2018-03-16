@@ -15,6 +15,7 @@ public class OSPF {
     Network myNet;
     ArrayList<Device> messagePath;
     
+    
     public void sendMessage(Network network, Device sender, Device destination){
         myNet = network;
         messagePath = findPath(myNet,sender,destination);
