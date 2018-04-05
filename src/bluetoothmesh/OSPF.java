@@ -16,14 +16,15 @@ public class OSPF {
     ArrayList<Device> messagePath;
     
     
-    public void sendMessage(Network network, Device sender, Device destination){
+    public void sendMessage(Network network, BTMessage message){
+        Device sender = message.getSender();
+        Device destination = message.getReceiver();
         myNet = network;
         messagePath = findPath(myNet,sender,destination);
-        System.out.println("\t\t********OSPF********\n");
         for (int i = 0; i < messagePath.size(); i++) {
             System.out.println("The message is currently at " + messagePath.get(i).getDeviceID()+ " is " +destination.getTxt());
             if (messagePath.get(i).equals(destination)){
-                destination.setTxt("OSPF we have made it");
+                destination.setTxt(message.getMessage());
                 
             }
         }

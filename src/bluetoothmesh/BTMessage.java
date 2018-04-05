@@ -5,47 +5,46 @@
  */
 package bluetoothmesh;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author jobmwesigwa
  */
 public class BTMessage {
-    private int senderAddress = 0;
-    private int receiverAddress = 0; 
+    private Device sender;
+    private Device receiver; 
     private int messageFrequency = 0;
-    private int hopes =0;
-    private int TIME_TO_LIVE = 0;
     private String message ="";
-    /**
-     *
-     */
-    public BTMessage() {
-    }
 
+    public BTMessage(Device sender, Device receiver, int freq, String txt) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.messageFrequency = freq;
+        this.message = txt;
+    }
+   
+    
     /**
      *
      * @return
      */
-    public int getSenderAddress() {
-        return senderAddress;
+    public Device getSender() {
+        return sender;
     }
 
     /**
      *
-     * @param reciverID
+     * @param sender
      */
-    public void setReciverID(int senderAddress) {
-        this.senderAddress = senderAddress;
+    public void setSender(Device sender) {
+        this.sender = sender;
     }
 
-    public int getReceiverAddress() {
-        return receiverAddress;
+    public Device getReceiver() {
+        return receiver;
     }
 
-    public void setReceiverAddress(int receiverAddress) {
-        this.receiverAddress = receiverAddress;
+    public void setReceiverAddress(Device receiver) {
+        this.receiver = receiver;
     }
 
     public int getMessageFrequency() {
@@ -55,14 +54,18 @@ public class BTMessage {
     public void setMessageFrequency(int messageFrequency) {
         this.messageFrequency = messageFrequency;
     }
-
-    public int getTIME_TO_LIVE() {
-        return TIME_TO_LIVE;
+    
+     /**
+     * @return the message
+     */
+    public String getMessage() {
+        return message;
     }
 
-    public void setTIME_TO_LIVE(int TIME_TO_LIVE) {
-        this.TIME_TO_LIVE = TIME_TO_LIVE;
+    /**
+     * @param message the message to set
+     */
+    public void setMessage(String message) {
+        this.message = message;
     }
-    
-    
 }

@@ -18,7 +18,6 @@ import java.util.Scanner;
  */
 public class BluetoothMesh {
     
-    //static final int BASE_UNICODE = 65;
     /**
      * @param args the command line arguments
      */
@@ -38,17 +37,17 @@ public class BluetoothMesh {
         
         if (edges == 3){
             file = "Configmesh3.txt";
-            PrintStream out = new PrintStream(new FileOutputStream("Mesh3Output.log"));
+            PrintStream out = new PrintStream(new FileOutputStream("Mesh3Output.log", true));
             System.setOut(out);
         }
         else if (edges == 4){
             file = "Configmesh4.txt";
-            PrintStream out = new PrintStream(new FileOutputStream("Mesh4Output.log"));
+            PrintStream out = new PrintStream(new FileOutputStream("Mesh4Output.log", true));
             System.setOut(out);
         }
         else if (edges == 5){
             file = "Configmesh5.txt";
-            PrintStream out = new PrintStream(new FileOutputStream("Mesh5Output.log"));
+            PrintStream out = new PrintStream(new FileOutputStream("Mesh5Output.log", true));
             System.setOut(out);
         }
         else
@@ -91,11 +90,26 @@ public class BluetoothMesh {
         catch (Exception e){
               System.out.println("Error -Other Exception "+e.toString());
             }
-        
+        System.out.println();
         System.out.println("\n\n \t\t ********Flooding********\n\n");
+        System.out.println();
         Flooding flooding = new Flooding(myNetwork);
-        flooding.floodManaged("Here we are", 2, devices[0], 25);
-        System.out.println("The message at U is " + devices[25].txt);
+        BTMessage message = new BTMessage(devices[0],devices[25],1,"Here we are");
+        flooding.flood(message);
+        
+//        System.out.println();
+//        System.out.println();
+//        System.out.println("\n\n \t\t ********Managed Flooding********\n\n");
+//        System.out.println();
+//        BTMessage message1 = new BTMessage(devices[0],devices[25],2,"Here we are");
+//        flooding.floodManaged(message1);
+//        
+//        System.out.println();
+//        System.out.println();
+//        System.out.println("\n\n \t\t ********OSPF********\n\n");
+//        System.out.println();
+//        BTMessage message2 = new BTMessage(devices[0],devices[25],3,"Here we are");
+//        OSPF.sendMessage(message1);
         
     }
    

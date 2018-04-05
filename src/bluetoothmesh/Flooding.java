@@ -22,8 +22,11 @@ public class Flooding {
     }
     
     
-    public void floodManaged(String message, int freq, Device sender, int receiverID){
-        
+    public void floodManaged(BTMessage message){
+        String text = message.getMessage();
+        int freq = message.getMessageFrequency();
+        Device sender =message.getSender();
+        int receiverID = message.getReceiver().getDeviceID();
         //for bfs search
         Queue<Integer> queue = new LinkedList();
         int senderId = sender.getDeviceID();
@@ -45,7 +48,7 @@ public class Flooding {
                 if (curAdd== receiverID){
                     
                     (myNet.network.get(curAdd)).setPath(senderID,(myNet.network.get(senderID).path));
-                    myNet.network.get(receiverID).txt=message;
+                    myNet.network.get(receiverID).txt=text;
                     unicast("Message Delivered", myNet.network.get(receiverID).path, myNet.network.get(receiverID), senderId);
                     return;
                 }
@@ -73,7 +76,11 @@ public class Flooding {
         } while (!queue.isEmpty() && hopCount<maxHopCount); 
     }
     
-    public void flood(String message, int freq, Device sender, int receiverID){
+    public void flood(BTMessage message){
+        String text = message.getMessage();
+        int freq = message.getMessageFrequency();
+        Device sender =message.getSender();
+        int receiverID = message.getReceiver().getDeviceID();
         //for bfs search
         Queue<Integer> queue = new LinkedList();
         int senderId = sender.getDeviceID();
@@ -95,7 +102,7 @@ public class Flooding {
                 if (curAdd== receiverID){
                     
                     (myNet.network.get(curAdd)).setPath(senderID,(myNet.network.get(senderID).path));
-                    myNet.network.get(receiverID).txt=message;
+                    myNet.network.get(receiverID).txt=text;
                     unicast("Message Delivered", myNet.network.get(receiverID).path, myNet.network.get(receiverID), senderId);
                     return;
                 }
