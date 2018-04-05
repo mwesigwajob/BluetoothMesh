@@ -12,10 +12,13 @@ import java.util.Stack;
  * @author jobmwesigwa
  */
 public class Device {
+
+    
     private boolean relay = false;
     private int deviceID = 0;
-    private ArrayList<Integer> neighbors, frequencies = new ArrayList<Integer>();
+    private ArrayList<Integer> neighbors, cache = new ArrayList<Integer>();
     public String txt = "";
+    private Boolean visited = false;
     public Stack<Integer> path = new Stack<Integer>();
     
     //instances required for OSPF
@@ -69,13 +72,6 @@ public class Device {
 
     /**
      *
-     * @param relay
-     */
-    public void setRelay(boolean relay) {
-        this.relay = relay;
-    }
-    /**
-     *
      * @return
      */
     public int getDeviceID() {
@@ -116,17 +112,17 @@ public class Device {
 
     
     /**
-     * @return the frequencies
+     * @return the cache
      */
-    public ArrayList<Integer> getFrequencies() {
-        return frequencies;
+    public ArrayList<Integer> getCache() {
+        return cache;
     }
 
     /**
-     * @param frequencies the frequencies to set
+     * @param cache the cache to set
      */
-    public void setFrequencies(ArrayList<Integer> frequencies) {
-        this.frequencies = frequencies;
+    public void setCache(ArrayList<Integer> cache) {
+        this.cache = cache;
     }
 
     public String getTxt() {
@@ -161,5 +157,21 @@ public class Device {
         this.shortestPath = shortestPath;
     }
     
-    
+    /**
+     * @return the visited
+     */
+    public Boolean getVisited() {
+        return visited;
+    }
+
+    /**
+     * @param visited the visited to set
+     */
+    public void setVisited(Boolean visited) {
+        this.visited = visited;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
 }

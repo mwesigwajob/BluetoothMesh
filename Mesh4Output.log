@@ -1,0 +1,101 @@
+
+
+ 		 ********Flooding********
+
+
+Message is currently at 0
+
+Message sent to 1
+
+Message sent to 2
+
+Message sent to 3
+
+Message sent to 5
+
+
+Message is currently at 1
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 8
+
+Message sent to 20
+
+
+Message is currently at 2
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 6
+
+Message sent to 9
+
+
+Message is currently at 20
+
+Message sent to 1
+The message has already arrived at node 1, Discard please
+
+Message sent to 8
+The message has already arrived at node 8, Discard please
+
+Message sent to 16
+
+Message sent to 21
+
+
+Message is currently at 6
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 3
+The message has already arrived at node 3, Discard please
+
+Message sent to 10
+
+Message sent to 14
+
+
+Message is currently at 9
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 13
+
+Message sent to 14
+The message has already arrived at node 14, Discard please
+
+
+Message is currently at 16
+
+Message sent to 13
+The message has already arrived at node 13, Discard please
+
+Message sent to 20
+The message has already arrived at node 20, Discard please
+
+Message sent to 21
+The message has already arrived at node 21, Discard please
+
+Message sent to 25
+
+
+Message Successfully delivered to 25
+The message path is [0, 1, 20, 16]
+The total hope count is: 27
+The path length is: 4
+The message at U is Here we are
