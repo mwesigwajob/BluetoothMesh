@@ -22,6 +22,7 @@ public class BluetoothMesh {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException {
+        
         Network myNetwork = new Network();
         final int NUM_OF_DEVICES =26;
         Device[] devices = new Device[NUM_OF_DEVICES];
@@ -30,24 +31,27 @@ public class BluetoothMesh {
         Scanner in = new Scanner(System.in);
         
         
-        
+        /**
+         * user selects the number of edges and the desired configuration file
+         * and log files set for both the input and output
+         */
         do{
         System.out.println("Enter the number of edges (3,4 or 5): ");
         edges = in.nextInt(); 
         
         if (edges == 3){
-            file = "Configmesh3.txt";
-            PrintStream out = new PrintStream(new FileOutputStream("Mesh3Output.log", true));
+            file = "config/Configmesh3.txt";
+            PrintStream out = new PrintStream(new FileOutputStream("logs/Mesh3Output.log"));
             System.setOut(out);
         }
         else if (edges == 4){
-            file = "Configmesh4.txt";
-            PrintStream out = new PrintStream(new FileOutputStream("Mesh4Output.log", true));
+            file = "config/Configmesh4.txt";
+            PrintStream out = new PrintStream(new FileOutputStream("logs/Mesh4Output.log"));
             System.setOut(out);
         }
         else if (edges == 5){
-            file = "Configmesh5.txt";
-            PrintStream out = new PrintStream(new FileOutputStream("Mesh5Output.log", true));
+            file = "config/Configmesh5.txt";
+            PrintStream out = new PrintStream(new FileOutputStream("logs/Mesh5Output.log"));
             System.setOut(out);
         }
         else
@@ -55,7 +59,9 @@ public class BluetoothMesh {
         }while (edges<3 || edges>5);
         
         
-        
+        /**
+         * set the instances of the each node and run all the 3 algorithms 
+         */
         try (BufferedReader myString = new BufferedReader(new InputStreamReader(new FileInputStream(file))))
         {
             String currentLine=null;
@@ -90,28 +96,29 @@ public class BluetoothMesh {
         catch (Exception e){
               System.out.println("Error -Other Exception "+e.toString());
             }
+        
+        //flooding
         System.out.println();
         System.out.println("\n\n \t\t ********Flooding********\n\n");
         System.out.println();
         Flooding flooding = new Flooding(myNetwork);
-        BTMessage message = new BTMessage(devices[0],devices[25],1,"Here we are");
+        BTMessage message = new BTMessage(devices[0],devices[25],1,"message");
         flooding.flood(message);
         
-//        System.out.println();
-//        System.out.println();
-//        System.out.println("\n\n \t\t ********Managed Flooding********\n\n");
-//        System.out.println();
-//        BTMessage message1 = new BTMessage(devices[0],devices[25],2,"Here we are");
-//        flooding.floodManaged(message1);
-//        
-//        System.out.println();
-//        System.out.println();
-//        System.out.println("\n\n \t\t ********OSPF********\n\n");
-//        System.out.println();
-//        BTMessage message2 = new BTMessage(devices[0],devices[25],3,"Here we are");
-//        OSPF.sendMessage(message1);
+        //Managed flooding
+        System.out.println();
+        System.out.println();
+        System.out.println("\n\n \t\t ********Managed Flooding********\n\n");
+        System.out.println();
+        message.setMessageFrequency(2); 
+        flooding.managedFlooding(message);
         
+        //OSPF
+        System.out.println();
+        System.out.println();
+        System.out.println("\n\n \t\t ********OSPF********\n\n");
+        System.out.println();
+        OSPF ospf = new OSPF();
+        ospf.sendMessage(myNetwork,message);
     }
-   
-    
 }

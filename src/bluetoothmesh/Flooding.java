@@ -14,19 +14,29 @@ import java.util.Stack;
  * @author jobmwesigwa
  */
 public class Flooding {
-    Network myNet;
-    int hopCount = 0;
-    int maxHopCount = 200;
+    private Network myNet;
+    private int hopCount = 0;
+    private int maxHopCount = 150;
     public Flooding (Network network){
         myNet = network;
     }
     
-    
-    public void floodManaged(BTMessage message){
+    /**
+     * Loops through the network to find destination or else stops when the
+     * maximum hope count is reached.
+     * At each node, goes through all neighbors to send message
+     * discards a message that has already been received 
+     * adds the neighbors to queues of nodes to be checked out if it's a relay node
+     * delivers the message if one of the neighbors is the destination 
+     * removes the current node from the queue
+     * @param message the message to be sent 
+     */
+    public void managedFlooding(BTMessage message){
         String text = message.getMessage();
         int freq = message.getMessageFrequency();
         Device sender =message.getSender();
         int receiverID = message.getReceiver().getDeviceID();
+        refresh();
         //for bfs search
         Queue<Integer> queue = new LinkedList();
         int senderId = sender.getDeviceID();
@@ -48,6 +58,7 @@ public class Flooding {
                 if (curAdd== receiverID){
                     
                     (myNet.network.get(curAdd)).setPath(senderID,(myNet.network.get(senderID).path));
+                    myNet.network.get(curAdd).path.push(curAdd);
                     myNet.network.get(receiverID).txt=text;
                     unicast("Message Delivered", myNet.network.get(receiverID).path, myNet.network.get(receiverID), senderId);
                     return;
@@ -75,13 +86,23 @@ public class Flooding {
             System.out.println();
         } while (!queue.isEmpty() && hopCount<maxHopCount); 
     }
-    
+    /**
+     * Loops through the network to find destination or else stops when the
+     * maximum hope count is reached.
+     * At each node, goes through all neighbors to send message
+     * discards a message that has already been received 
+     * adds the neighbors to queues of nodes to be checked out
+     * delivers the message if one of the neighbors is the destination 
+     * removes the current node from the queue
+     * @param message the message to be sent 
+     */
     public void flood(BTMessage message){
         String text = message.getMessage();
         int freq = message.getMessageFrequency();
         Device sender =message.getSender();
         int receiverID = message.getReceiver().getDeviceID();
         //for bfs search
+        refresh();
         Queue<Integer> queue = new LinkedList();
         int senderId = sender.getDeviceID();
         hopCount = 0;
@@ -102,6 +123,7 @@ public class Flooding {
                 if (curAdd== receiverID){
                     
                     (myNet.network.get(curAdd)).setPath(senderID,(myNet.network.get(senderID).path));
+                    myNet.network.get(curAdd).path.push(curAdd);
                     myNet.network.get(receiverID).txt=text;
                     unicast("Message Delivered", myNet.network.get(receiverID).path, myNet.network.get(receiverID), senderId);
                     return;
@@ -129,7 +151,16 @@ public class Flooding {
         } while (!queue.isEmpty() && hopCount<maxHopCount); 
     }
     
-    public boolean unicast(String msg, Stack<Integer> backPath, Device sender, int receiverId){
+    /**
+     * @param msg the message to be delivered 
+     * @param backPath the path of nodes back to source
+     * @param sender the source node
+     * @param receiverId the address of the destination node
+     * @return Boolean the confirmation whether the message is delivered.
+     * Sends the acknowledgement  message back to source using the path it took
+     * on delivery
+    */
+    private boolean unicast(String msg, Stack<Integer> backPath, Device sender, int receiverId){
         int size =backPath.size();
         System.out.println();
         System.out.println();
@@ -144,5 +175,14 @@ public class Flooding {
       }
       System.out.println("Feedback from Receiver not received");
       return false;
+    }
+    
+    /*
+    *Refreshes the nodes from being visted after runing the algorithm
+    */
+    private void refresh(){
+        for (int i =0; i<myNet.network.size();i++)
+            if (myNet.network.get(i).isVisited())
+                myNet.network.get(i).setVisited(false);
     }
 }

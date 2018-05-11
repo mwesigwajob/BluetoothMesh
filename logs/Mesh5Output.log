@@ -1,0 +1,558 @@
+
+
+
+ 		 ********Flooding********
+
+
+
+Message is currently at 0
+
+Message sent to 1
+
+Message sent to 2
+
+Message sent to 3
+
+Message sent to 4
+
+Message sent to 5
+
+
+Message is currently at 1
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 6
+
+Message sent to 7
+
+Message sent to 8
+
+
+Message is currently at 2
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 1
+The message has already arrived at node 1, Discard please
+
+Message sent to 3
+The message has already arrived at node 3, Discard please
+
+Message sent to 6
+The message has already arrived at node 6, Discard please
+
+Message sent to 8
+The message has already arrived at node 8, Discard please
+
+
+Message is currently at 3
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 4
+The message has already arrived at node 4, Discard please
+
+Message sent to 8
+The message has already arrived at node 8, Discard please
+
+Message sent to 9
+
+
+Message is currently at 4
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 3
+The message has already arrived at node 3, Discard please
+
+Message sent to 9
+The message has already arrived at node 9, Discard please
+
+Message sent to 10
+
+Message sent to 11
+
+
+Message is currently at 5
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 10
+The message has already arrived at node 10, Discard please
+
+Message sent to 11
+The message has already arrived at node 11, Discard please
+
+Message sent to 16
+
+Message sent to 18
+
+
+Message is currently at 2
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 1
+The message has already arrived at node 1, Discard please
+
+Message sent to 3
+The message has already arrived at node 3, Discard please
+
+Message sent to 6
+The message has already arrived at node 6, Discard please
+
+Message sent to 8
+The message has already arrived at node 8, Discard please
+
+
+Message is currently at 6
+
+Message sent to 1
+The message has already arrived at node 1, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 7
+The message has already arrived at node 7, Discard please
+
+Message sent to 12
+
+Message sent to 13
+
+
+Message is currently at 7
+
+Message sent to 1
+The message has already arrived at node 1, Discard please
+
+Message sent to 6
+The message has already arrived at node 6, Discard please
+
+Message sent to 13
+The message has already arrived at node 13, Discard please
+
+Message sent to 15
+
+Message sent to 16
+The message has already arrived at node 16, Discard please
+
+
+Message is currently at 8
+
+Message sent to 1
+The message has already arrived at node 1, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 3
+The message has already arrived at node 3, Discard please
+
+Message sent to 9
+The message has already arrived at node 9, Discard please
+
+Message sent to 15
+The message has already arrived at node 15, Discard please
+
+
+Message is currently at 3
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 4
+The message has already arrived at node 4, Discard please
+
+Message sent to 8
+The message has already arrived at node 8, Discard please
+
+Message sent to 9
+The message has already arrived at node 9, Discard please
+
+
+Message is currently at 6
+
+Message sent to 1
+The message has already arrived at node 1, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 7
+The message has already arrived at node 7, Discard please
+
+Message sent to 12
+The message has already arrived at node 12, Discard please
+
+Message sent to 13
+The message has already arrived at node 13, Discard please
+
+
+Message is currently at 8
+
+Message sent to 1
+The message has already arrived at node 1, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 3
+The message has already arrived at node 3, Discard please
+
+Message sent to 9
+The message has already arrived at node 9, Discard please
+
+Message sent to 15
+The message has already arrived at node 15, Discard please
+
+
+Message is currently at 4
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 3
+The message has already arrived at node 3, Discard please
+
+Message sent to 9
+The message has already arrived at node 9, Discard please
+
+Message sent to 10
+The message has already arrived at node 10, Discard please
+
+Message sent to 11
+The message has already arrived at node 11, Discard please
+
+
+Message is currently at 8
+
+Message sent to 1
+The message has already arrived at node 1, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 3
+The message has already arrived at node 3, Discard please
+
+Message sent to 9
+The message has already arrived at node 9, Discard please
+
+Message sent to 15
+The message has already arrived at node 15, Discard please
+
+
+Message is currently at 9
+
+Message sent to 3
+The message has already arrived at node 3, Discard please
+
+Message sent to 4
+The message has already arrived at node 4, Discard please
+
+Message sent to 8
+The message has already arrived at node 8, Discard please
+
+Message sent to 10
+The message has already arrived at node 10, Discard please
+
+Message sent to 16
+The message has already arrived at node 16, Discard please
+
+
+Message is currently at 9
+
+Message sent to 3
+The message has already arrived at node 3, Discard please
+
+Message sent to 4
+The message has already arrived at node 4, Discard please
+
+Message sent to 8
+The message has already arrived at node 8, Discard please
+
+Message sent to 10
+The message has already arrived at node 10, Discard please
+
+Message sent to 16
+The message has already arrived at node 16, Discard please
+
+
+Message is currently at 10
+
+Message sent to 4
+The message has already arrived at node 4, Discard please
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 9
+The message has already arrived at node 9, Discard please
+
+Message sent to 11
+The message has already arrived at node 11, Discard please
+
+Message sent to 17
+
+
+Message is currently at 11
+
+Message sent to 4
+The message has already arrived at node 4, Discard please
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 10
+The message has already arrived at node 10, Discard please
+
+Message sent to 17
+The message has already arrived at node 17, Discard please
+
+Message sent to 24
+
+
+Message is currently at 10
+
+Message sent to 4
+The message has already arrived at node 4, Discard please
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 9
+The message has already arrived at node 9, Discard please
+
+Message sent to 11
+The message has already arrived at node 11, Discard please
+
+Message sent to 17
+The message has already arrived at node 17, Discard please
+
+
+Message is currently at 11
+
+Message sent to 4
+The message has already arrived at node 4, Discard please
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 10
+The message has already arrived at node 10, Discard please
+
+Message sent to 17
+The message has already arrived at node 17, Discard please
+
+Message sent to 24
+The message has already arrived at node 24, Discard please
+
+
+Message is currently at 16
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 9
+The message has already arrived at node 9, Discard please
+
+Message sent to 15
+The message has already arrived at node 15, Discard please
+
+Message sent to 17
+The message has already arrived at node 17, Discard please
+
+Message sent to 22
+
+
+Message is currently at 18
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 17
+The message has already arrived at node 17, Discard please
+
+Message sent to 22
+The message has already arrived at node 22, Discard please
+
+Message sent to 24
+The message has already arrived at node 24, Discard please
+
+Message sent to 25
+
+
+Message Successfully delivered to 25
+The message path is [0, 5, 18, 25]
+The total hope count is: 114
+The path length is: 4
+
+
+
+
+ 		 ********Managed Flooding********
+
+
+
+Message is currently at 0
+
+Message sent to 1
+
+Message sent to 2
+
+Message sent to 3
+
+Message sent to 4
+
+Message sent to 5
+
+
+Message is currently at 1
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 6
+
+Message sent to 7
+
+Message sent to 8
+
+
+Message is currently at 3
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 4
+The message has already arrived at node 4, Discard please
+
+Message sent to 8
+The message has already arrived at node 8, Discard please
+
+Message sent to 9
+
+
+Message is currently at 5
+
+Message sent to 0
+The message has already arrived at node 0, Discard please
+
+Message sent to 10
+
+Message sent to 11
+
+Message sent to 16
+
+Message sent to 18
+
+
+Message is currently at 6
+
+Message sent to 1
+The message has already arrived at node 1, Discard please
+
+Message sent to 2
+The message has already arrived at node 2, Discard please
+
+Message sent to 7
+The message has already arrived at node 7, Discard please
+
+Message sent to 12
+
+Message sent to 13
+
+
+Message is currently at 11
+
+Message sent to 4
+The message has already arrived at node 4, Discard please
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 10
+The message has already arrived at node 10, Discard please
+
+Message sent to 17
+
+Message sent to 24
+
+
+Message is currently at 16
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 9
+The message has already arrived at node 9, Discard please
+
+Message sent to 15
+
+Message sent to 17
+The message has already arrived at node 17, Discard please
+
+Message sent to 22
+
+
+Message is currently at 18
+
+Message sent to 5
+The message has already arrived at node 5, Discard please
+
+Message sent to 17
+The message has already arrived at node 17, Discard please
+
+Message sent to 22
+The message has already arrived at node 22, Discard please
+
+Message sent to 24
+The message has already arrived at node 24, Discard please
+
+Message sent to 25
+
+
+Message Successfully delivered to 25
+The message path is [0, 5, 18, 25]
+The total hope count is: 39
+The path length is: 4
+
+
+
+
+ 		 ********OSPF********
+
+
+
+Message sent to 0
+Message sent to 5
+Message sent to 18
+Message sent to 25
+
+Message Successfully delivered to 0
+Message Path: [0, 5, 18, 25]
+Total Hop count: 4
+Hop count: 4

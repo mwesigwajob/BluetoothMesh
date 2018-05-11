@@ -13,15 +13,16 @@ import java.util.ArrayList;
  */
 public class Network {
     public ArrayList<Device> network = new ArrayList();
-    int counter =0;
-    
     /**
      * Adds the new device to the network arraylist and adds its reference to 
      * devices connected to it
      * @param newDev the new device to be added
      */
-    public void addDevice(Device newDev){
-        network.add(newDev);
+    public boolean addDevice(Device newDev){
+        return network.add(newDev);
     }
     
+    public boolean deleteDevice(Device newDev){
+        return network.remove(newDev);
+    }
 }
