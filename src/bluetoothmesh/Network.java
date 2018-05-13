@@ -25,4 +25,13 @@ public class Network {
     public boolean deleteDevice(Device newDev){
         return network.remove(newDev);
     }
+    
+    public void makeRelay (ArrayList<Integer> relays, ArrayList<Device> network){
+        for (int i = 0; i<network.size(); i++){
+            if (relays.contains(network.get(i).getDeviceID()))
+                network.get(i).setRelay(true);
+            else
+                network.get(i).setRelay(false);
+        }
+    }
 }

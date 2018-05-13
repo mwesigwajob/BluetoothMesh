@@ -11,6 +11,8 @@ import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -29,14 +31,14 @@ public class BluetoothMesh {
         String file="";
         int edges;
         Scanner in = new Scanner(System.in);
-        
+        ArrayList<Integer> relays = new ArrayList();
         
         /**
          * user selects the number of edges and the desired configuration file
          * and log files set for both the input and output
          */
         do{
-        System.out.println("Enter the number of edges (3,4 or 5): ");
+        System.out.println("Enter the number of edges (3,4 or 5): Or 6 to simulate the effect of Relays");
         edges = in.nextInt(); 
         
         if (edges == 3){
@@ -54,10 +56,14 @@ public class BluetoothMesh {
             PrintStream out = new PrintStream(new FileOutputStream("logs/Mesh5Output.log"));
             System.setOut(out);
         }
+        else if (edges == 6){
+            file = "config/Configmesh5.txt";
+            PrintStream out = new PrintStream(new FileOutputStream("logs/relays.log"));
+            System.setOut(out);
+        }
         else
             System.out.println("Invalid entry: enter 3,4 or 5: ");
-        }while (edges<3 || edges>5);
-        
+        }while (edges<3 || edges>6);
         
         /**
          * set the instances of the each node and run all the 3 algorithms 
@@ -96,29 +102,57 @@ public class BluetoothMesh {
         catch (Exception e){
               System.out.println("Error -Other Exception "+e.toString());
             }
-        
+        int i = 26;
+        int freq = 1;
+        while (i>=8){
+            
+            Flooding flooding = new Flooding(myNetwork);
+            BTMessage message = new BTMessage(devices[0],devices[25],1,"message");
+            
+            if(i!=26){
+                System.out.println("here");
+                for (int j = 0; j<i;j++){
+                    Random r = new Random();
+                    int result = r.nextInt(i-0) + 0;
+                    while (relays.contains(result))
+                        result = r.nextInt(i-0) + 0;
+                    relays.add(result);
+                }
+            }
+            myNetwork.makeRelay(relays, myNetwork.network);
+            
+            System.out.println();
+            System.out.println();
+            System.out.println("\n\n \t\t ********Managed Flooding********\n\n");
+            System.out.println();
+            message.setMessageFrequency(freq); 
+            flooding.managedFlooding(message);
+            freq =freq+1;
+            i=i-13;
+        }
         //flooding
-        System.out.println();
-        System.out.println("\n\n \t\t ********Flooding********\n\n");
-        System.out.println();
-        Flooding flooding = new Flooding(myNetwork);
-        BTMessage message = new BTMessage(devices[0],devices[25],1,"message");
-        flooding.flood(message);
+//        System.out.println();
+//        System.out.println("\n\n \t\t ********Flooding********\n\n");
+//        System.out.println();
+//        Flooding flooding = new Flooding(myNetwork);
+//        BTMessage message = new BTMessage(devices[0],devices[25],1,"message");
+//        flooding.flood(message);
+        
         
         //Managed flooding
-        System.out.println();
-        System.out.println();
-        System.out.println("\n\n \t\t ********Managed Flooding********\n\n");
-        System.out.println();
-        message.setMessageFrequency(2); 
-        flooding.managedFlooding(message);
+//        System.out.println();
+//        System.out.println();
+//        System.out.println("\n\n \t\t ********Managed Flooding********\n\n");
+//        System.out.println();
+//        message.setMessageFrequency(2); 
+//        flooding.managedFlooding(message);
         
         //OSPF
-        System.out.println();
-        System.out.println();
-        System.out.println("\n\n \t\t ********OSPF********\n\n");
-        System.out.println();
-        OSPF ospf = new OSPF();
-        ospf.sendMessage(myNetwork,message);
+//        System.out.println();
+//        System.out.println();
+//        System.out.println("\n\n \t\t ********OSPF********\n\n");
+//        System.out.println();
+//        OSPF ospf = new OSPF();
+//        ospf.sendMessage(myNetwork,message);
     }
 }
